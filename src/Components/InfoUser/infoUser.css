@@ -1,0 +1,36 @@
+.userInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInfo span {
+    color: var(--botones);
+}
+
+.userInfo img {
+    width: 130px;
+    height: 130px;
+    border: 2px solid var(--bgv-color);
+    padding: 3px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.userInfo p {
+    color: var(--bgv-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+.loginText{
+    font-size: 14px;
+}

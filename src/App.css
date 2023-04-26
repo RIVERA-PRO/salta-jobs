@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+*{
+  padding: 0 ;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --text-color: #000;
+  --bg-color: #f3f9fb;
+  --darkIcon-color: #000;
+  --header: #fff;
+  --morado: #d103ffd3;
+  --celeste: #18f0ff;
+  --botones: #0D3878;
+  --letra-azul:#0D3878;
+  --modal: #0D3878;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.theme-dark{
+  --text-color: #ffff;
+  --bg-color: #0f172a!important;
+  --darkIcon-color: #fff;
+  --header: #0D3878;
+  --morado: #d103ffd3;
+  --celeste: #18f0ff;
+  --botones: #0D3878;
+  --letra-azul:#ffff;
+  --modal: #0D3878;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.theme-dark .logo2{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.theme-dark .logo{
+  display: none;
+}
+.main-content {
+  width: 100%;
+ 
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.darkmode{
+width: 20px;
+height: 20px;
+padding: 50px;
+border-radius: 100%;
+cursor: pointer;
+z-index: 20;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.darkmode-icon {
+  font-size: 20px;
+margin-right: 0.5em;
+color: var(--blanco);
+cursor: pointer;
 }
+
+.darkmode{
+display: none;
+}
+
+.main-content{
+ display: flex !important;
+ flex-direction: column!important;
+ justify-content: flex-end!important;
+ align-items: center!important;
+ position: fixed!important;
+ background-color: transparent!important;
+ top: 0!important;
+ z-index: 10!important;
+ margin-top: 6.8vh;
+ width: 10px;
+ height: 0vh;
+ border-radius:100% ;
+ left: 84%;
+}
+
+@media (max-width: 1150px){
+.main-content{
+
+  width: 10px;
+  height: 0vh;
+  border-radius:100% ;
+  left: 76%;
+}
+}
+
+@media (max-width: 1024px){
+  .main-content{
+  
+    width: 10px;
+    height: 0vh;
+    border-radius:100% ;
+    left: 50%;
+  }
+  }
+@media (max-width: 500px){
+  .main-content{
+    margin-top: 6.5vh;
+    width: 10px;
+    height: 0vh;
+    border-radius:100% ;
+    left: 60%;
+  }
+  }
+

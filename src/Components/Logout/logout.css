@@ -1,0 +1,16 @@
+.logoutBtn{
+    width: 100%;
+    padding: 8px;
+    background-color: var(--botones);
+    color: var(--texto-negro-blanco);
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.logoutBtn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all ease-in-out .5s;
+}
