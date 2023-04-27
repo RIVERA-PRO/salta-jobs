@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import Spiral from "../Spiral/Spiral";
 import { Link as Anchor } from "react-router-dom";
 import "./JobsHome.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react'
+
 export default function JobsHome() {
     const [destinos, setDestinos] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
@@ -93,7 +96,6 @@ export default function JobsHome() {
 
         return (
             <div className="contain-destinos">
-                <h3>Explora las oportunidades</h3>
 
                 <div className="filtros">
                     <div>
@@ -109,7 +111,7 @@ export default function JobsHome() {
                     </div>
                     <div>
                         <select value={salario} onChange={(e) => setSalario(e.target.value)}>
-                            <option value="">Salario</option>
+                            <option value="">Salarios</option>
                             <option value="1000">$1000 or less</option>
                             <option value="2000">$1000 - $2000</option>
                             <option value="3000">$2000 - $3000</option>
@@ -123,19 +125,37 @@ export default function JobsHome() {
                             value={ubicacion}
                             onChange={(e) => setUbicacion(e.target.value)}
                         >
-                            <option value="">Lugar</option>
-                            <option value="New York">New York</option>
-                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="">Departamentos</option>
+                            <option value="Otros">Otros</option>
                             <option value="Salta">Salta</option>
-                            <option value="Houston">Houston</option>
-                            <option value="Miami">Miami</option>
-                            <option value="Other">Other</option>
+                            <option value="Anta">Anta</option>
+                            <option value="Cachi">Cachi</option>
+                            <option value="Cafayate">Cafayate</option>
+                            <option value="Cerrillos">Cerrillos</option>
+                            <option value="Chicoana">Chicoana</option>
+                            <option value="General Güemes">General Güemes</option>
+                            <option value="Guachipas">Guachipas</option>
+                            <option value="Iruya">Iruya</option>
+                            <option value="La Caldera">La Caldera</option>
+                            <option value="La Candelaria">La Candelaria</option>
+                            <option value="La Poma">La Poma</option>
+                            <option value="La Viña">La Viña</option>
+                            <option value="Los Andes">Los Andes</option>
+                            <option value="Metán">Metán</option>
+                            <option value="Molinos">Molinos</option>
+                            <option value="Orán">Orán</option>
+                            <option value="Rivadavia">Rivadavia</option>
+                            <option value="Rosario de la Frontera">Rosario de la Frontera</option>
+                            <option value="Rosario de Lerma">Rosario de Lerma</option>
+                            <option value="San Carlos">San Carlos</option>
+                            <option value="San Martín">San Martín</option>
+                            <option value="Santa Victoria">Santa Victoria</option>
                         </select>
                     </div>
                     <div>
 
                         <select id="lugar" value={lugar} onChange={(e) => setLugar(e.target.value)}>
-                            <option value="">Ubicacion</option>
+                            <option value="">Ubicaciones</option>
                             {destinos && [...new Set(destinos.map((destino) => destino.lugar))].map((lugar) => (
                                 <option key={lugar} value={lugar}>
                                     {lugar}
@@ -151,7 +171,7 @@ export default function JobsHome() {
                         <div className="inputsearch">
                             <input
                                 type="text"
-                                placeholder="Search...."
+                                placeholder="Buscar...."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -163,26 +183,30 @@ export default function JobsHome() {
                                         <div>
 
                                             <div className="card-text">
-                                                <h2>{destino?.title.slice(0, 30)}</h2>
-
+                                                <h2 id="title-cardtext">{destino?.title.slice(0, 30)}..</h2>
+                                                <div className="card-text-ubi-modal">
+                                                    <h6>{destino?.ubicacion}, {destino?.lugar}</h6>
+                                                    <div className="card-text-modalidad">
+                                                        <p>{destino.modalidad}</p>
+                                                    </div>
+                                                </div>
                                                 <div className="info-user-jobs">
                                                     <img className="info-user-img" src={destino?.photo} alt="" />
                                                     <div className="info-p">
-                                                        <h6>{destino?.name}</h6>
-                                                        <h6>{destino?.mail}</h6>
+                                                        <p>{destino?.name}</p>
                                                     </div>
                                                 </div>
                                                 <div className="price-link">
 
                                                     <button className="btn-preview" onClick={() => setSelectedDestino(destino) && handlePreviewClick()}>
-                                                        Visualizar
+                                                        Ver <FontAwesomeIcon icon={faSignOutAlt} />
                                                     </button>
 
                                                     <Anchor
                                                         className="btn-details"
                                                         to={`/details/${destino?._id}`}
                                                     >
-                                                        Details
+                                                        Ver <FontAwesomeIcon icon={faSignOutAlt} />
                                                     </Anchor>
                                                     {destino.user_id === userId ? (
                                                         <Anchor
@@ -204,32 +228,43 @@ export default function JobsHome() {
                         </div>
                     </div>
 
-                    <div className="destino-details">
+                    <div className="destino-details-contain">
 
                         <div className="destino-details">
                             {selectedDestino ? (
-                                <div>
+                                <div className="jobs-contain-body-heeader-footer">
                                     <div className="jobs-header">
                                         <div className="jobs-header-text">
                                             <h2>{selectedDestino.title}</h2>
                                             <h5>{selectedDestino.ubicacion}, {selectedDestino.lugar}</h5>
                                             <h6>Fecha: {selectedDestino?.createdAt?.slice(0, 10)} - {hour}:{minutes}hs</h6>
-
                                         </div>
                                         <img src={selectedDestino.cover_photo} alt="" />
                                     </div>
-
-                                    <div className="jobs-body">
-                                        <h5>{selectedDestino.description}</h5>
-                                        <h5>Categoria {selectedDestino.categoria}</h5>
-                                        <h5>Salario ${selectedDestino.salario}</h5>
-                                        <h5>Vaantes {selectedDestino.vacantes}</h5>
+                                    <hr className="hr" />
+                                    <div className="jobs-jornada-modalidad">
+                                        <p> {selectedDestino.categoria}</p>
+                                        <p>Jornada {selectedDestino.jornada}</p>
+                                        <p>{selectedDestino.modalidad}</p>
                                     </div>
-                                    <div className="info-user-jobss">
-                                        <img className="info-user-img" src={selectedDestino.photo} alt="" />
-                                        <div className="info-p">
-                                            <h6>{selectedDestino.name}</h6>
-                                            <h6>{selectedDestino.mail}</h6>
+                                    <div className="jobs-body">
+                                        <p>{selectedDestino.description}</p>
+                                        <p>Requisitos: <br />{selectedDestino.requisitos}</p>
+                                        <p>Salario ${selectedDestino.salario}</p>
+                                        <p>Vacantes {selectedDestino.vacantes}</p>
+                                    </div>
+
+                                    <div className="jobs-footer">
+                                        <p>Publicado por:</p>
+                                        <div className="info-user-jobs">
+                                            <img className="info-user-img" src={selectedDestino.photo} alt="" />
+                                            <div className="info-p">
+                                                <p>{selectedDestino.name}</p>
+                                                <p>{selectedDestino.mail}</p>
+                                            </div>
+                                        </div>
+                                        <div>
+
                                         </div>
                                     </div>
 

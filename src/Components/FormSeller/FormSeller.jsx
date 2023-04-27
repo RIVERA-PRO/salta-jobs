@@ -58,30 +58,30 @@ export default function FormSeller() {
         <div className='formSeller'>
             <form onSubmit={handleSubmit} className='sellerFormulario'>
                 <div className='inputs'>
-                    <label >Name</label>
-                    <input type="text" placeholder='enter your Name' ref={name} />
+                    <label >Nombre</label>
+                    <input type="text" placeholder='Nombre' ref={name} />
                 </div>
                 <div className='inputs'>
-                    <label >Last Name</label>
-                    <input type="text" placeholder='enter your Last Name' ref={last_name} />
+                    <label >Apellido</label>
+                    <input type="text" placeholder='Apellido' ref={last_name} />
                 </div>
                 <div className='inputs'>
-                    <label >City</label>
-                    <input type="text" placeholder='enter your City' ref={city} />
+                    <label >Ciudad</label>
+                    <input type="text" placeholder='Ciudad' ref={city} />
                 </div>
                 <div className='inputs'>
-                    <label >Country</label>
-                    <input type="text" placeholder='enter your country' ref={country} />
+                    <label >Pais</label>
+                    <input type="text" placeholder='Pais' ref={country} />
                 </div>
                 <div className='inputs'>
-                    <label >Date</label>
+                    <label >Fecha de creacion</label>
                     <input type="date" ref={date} />
                 </div>
                 <div className='inputs'>
-                    <label >Photo</label>
-                    <input type="text" placeholder='Enter a photo through a url' ref={photo} />
+                    <label >Tu Foto</label>
+                    <input type="text" placeholder='Tu Foto url' ref={photo} />
                 </div>
-                <button>Send</button>
+                <button>Enviar</button>
             </form>
         </div>
     )

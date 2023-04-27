@@ -7,41 +7,40 @@
 }
 
 
-.label-center{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 15px;
-}
+
 
 .formSeller label{
     font-size: 14px;
 
 }
 
-.formSeller{
-    background: linear-gradient(0deg,var(--gradient2) 0%, var(--gradient1) 100%);
+.formSeller-DES{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 100%;
+        background-color: var(--bg-color);
+}
+.formSeller-DESS input {
+    background-color: var(--header);
+    border-radius: 20px;
+    padding: 8px;
+    border: none;
+    margin: 10px 0px;
+    color: var(--text-color)!important;;
+
+}
+.formSeller-DESS button{
+cursor: pointer;
+    width: 100%;
+    padding: 10px 0px;
+    background-color: var(--botones) !important;
+    color: var(--blanco) !important;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
 }
 
-.packages-contain{
-    margin: auto;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    display: grid;
-    grid-auto-rows: max-content;
-    grid-template-columns: repeat(auto-fit, minmax(370px, 3vh));
-    gap: 3rem;
-    background-color: var(--gradient1);
-    align-items: center;
-    align-content: center;
-    place-content: center;
-    padding: 10px 0%;
-    border-radius: 7px;
-}
-
-.packages{
-    width: 100%;
-}
 
 .contain-destin{
     margin: auto;
@@ -50,27 +49,33 @@
     overflow: hidden;
     display: grid;
     grid-auto-rows: max-content;
-    grid-template-columns: repeat(auto-fit, minmax(370px, 3vh));
+    grid-template-columns: repeat(auto-fit, minmax(470px, 3vh));
     gap: 3rem;
     background-color: var(--gradient1);
     place-content: center;
     padding: 50px 0%;
     border-radius: 7px;
+} 
+
+.selects{
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 3vh));
+    gap: 1rem;
+    padding: 10px 3%;
+    width: 100%;
 }
-.photo{
-    width: 200%;
+.selects select{
+    width: 13rem;
 }
 
 @media (max-width: 500px){
     .contain-destin{
         display: flex;
         flex-direction: column;
+        width: 80%;
     }
 
-    .packages-contain{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 3vh));
-        gap: 1rem;
-    }
     .al-lado{
         display: flex;
         flex-direction: column;
@@ -79,8 +84,3 @@
     
 
 }
-.selectCategory{
-    margin-left: 0;
-    background-color: var(  --cards-color)!important;
-    color: var(--text-color)!important;;
- }

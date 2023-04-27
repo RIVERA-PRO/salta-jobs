@@ -2,11 +2,11 @@
     padding:0%;
     display: block;
     min-height: 10vh;
-   width: 100%;
+    width: 100%;
 }
 
 .scrolll{
-    max-height: 85vh;
+    max-height: 80vh;
     overflow-y:scroll;
     padding: 10px 10px;
     display: flex;
@@ -27,6 +27,11 @@
 .contain-destinos h3{
     padding: 20px 0px;
     font-size: 30px;
+    color: var(--text-color);
+}
+.contain-destinos h2,h4,h5{
+
+    color: var(--text-color);
 }
 .jobs-contain-total{
     background-color: var(--bg-color);
@@ -39,19 +44,30 @@
     padding: 5% 0%;
     width: 100%;
 }
+.destino-details-contain{
+    padding: 0%;
+    display: block;
+    min-height: 10vh;
+    width: 100%;
+    transition: all 0.25s;
+}
 .destino-details{
     border-radius: 10px;
     background-color: var(--bgv-color);
-    box-shadow: 0 2px 2px #1a1e25;
+    box-shadow: 1px 1px 4px 1px #1a1e2557;
     height: 90vh;
     width: 40rem;
-margin-top: 20px;
+    margin-top: 20px;
     top: 0;
     display: flex;
-    justify-content: center;
-
-
-    
+    max-height: 85vh;
+    overflow-y:scroll;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    transition: all 0.25s;
 }
 
 .destinos-contain{
@@ -68,7 +84,9 @@ margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
-
+.destinos-contain h2, h6 {
+    color: var(--text-color);
+}
 .destinos-contain img{
     width: 100px;
 }
@@ -76,9 +94,9 @@ margin-top: 20px;
 .card-destinos{
     background-color: var(--bgv-color);
     width: 25rem;
-    min-height: 20vh;
+    min-height: 10rem;
     border-radius: 10px;
-    box-shadow: 0 2px 2px #1a1e25;
+    box-shadow: 1px 1px 4px 1px #1a1e2557;
     overflow: hidden;
     text-align: center;
     transition: all 0.25s;
@@ -97,8 +115,31 @@ margin-top: 20px;
     flex-direction: column;
     gap: 10px;
 }
+.card-text h2,h3,h4{
+  color: var(--text-color)!important;
+}
+#title-cardtext{
+    color: var(--text-color)!important;
+}
+.card-text-modalidad p{
+  
+    color: var(--text-color)!important;
+    border: 1px solid var(--modal);
+    border-radius: 30px;
+    padding: 1px 12px;
+    font-size: 12px;
+    text-align: center;
+    max-width: 5rem;
+}
+.card-text-ubi-modal{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.card-text h2{
+    font-size: 20px;
+}
 .card-text a{
-    
     color: var(--bgv-color);
     text-decoration: none;
 }
@@ -129,10 +170,10 @@ margin-top: 20px;
     border-radius: 20px;
     font-size: 14px!important;
     background-color: var( --botones);
-    color: var(--bg-color)!important;
+    color: var(--blanco)!important;
     padding: 3px 10px;
     text-decoration: none;
-    width: 7rem;
+    width: 5rem;
     text-align: center;
     font-weight: 600;
 }
@@ -140,25 +181,32 @@ margin-top: 20px;
     border-radius: 20px;
     font-size: 14px!important;
     background-color: var( --botones);
-    color: var(--bg-color)!important;
+    color: var(--blanco)!important;
     padding: 3px 10px;
     text-decoration: none;
-    width: 7rem;
+    width: 5rem;
     text-align: center;
     font-weight: 600;
+    cursor: pointer;
     display: none;
+    align-items: center;
+    gap: 1rem;
+    border: none;
 }
 .btn-preview{
     border-radius: 20px;
     font-size: 14px!important;
     background-color: var( --botones);
-    color: var(--bg-color)!important;
+    color: var(--blanco)!important;
     padding: 3px 10px;
     text-decoration: none;
-    width: 7rem;
+    width: 5rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    border: none;
 }
 
 .card-price{
@@ -193,7 +241,6 @@ margin-top: 20px;
     border: none;
     padding: 13px 10px;
     width: 80%;
-
     color: var(--bgv-color)!important;
 }
 
@@ -220,7 +267,7 @@ select{
     border-radius: 20px;
     border: none;
     padding: 8px 10px;
-    width: 11rem;
+    width: 15rem;
     color: var(--blanco)!important;
     
 }
@@ -263,23 +310,23 @@ option{
     align-items: center;
     gap: 4px;
 }
-.info-p{
-    font-size: 14px;
+.info-p p{
+    font-size: 10px;
     color: var(--text-color)!important;
 }
 .info-user-img{
-    width: 35px!important;
-    height: 35px !important;
+    width: 30px!important;
+    height: 30px !important;
     border-radius: 100%!important;
 }
 
+/*jobs detail-------------------------------------------------------*/
 .jobs-header{
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-    gap: 10rem;
-    padding: 20px 5%;
+    gap: 40%;
 }
 .jobs-header img{
     width: 80px;
@@ -296,13 +343,102 @@ option{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    padding: 20px 5%;
     width: 100%;
     gap: 1rem;
     text-align: left;
 }
+.jobs-body p{
+    font-size: 14px;
+    color: var(--text-color)!important;
+}
+.jobs-contain-body-heeader-footer{
+    width: 100%;
+    padding: 20px 5%;
+}
+
+.hr{
+    margin-top: 20px;
+}
+
+.jobs-jornada-modalidad{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+    margin-top: 10px;
+    text-align: center;
+}
+.jobs-jornada-modalidad p{
+    display: flex;
+    gap:3rem;
+    color: var(--text-color)!important;
+    border: 1px solid var(--modal);
+    border-radius: 30px;
+    padding: 2px 30px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.jobs-footer{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    gap: 10px;
+}
+.jobs-footer p{
+    color: var(--text-color)!important;
+    font-size: 13px;
+}
+@media (max-width: 1000px){
+    .btn-details{
+        display: flex;
+    }
+    .btn-preview{
+        display: none;
+    }
+    .jobs-contain-total{
+        background-color: var(--bg-color);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    }
+    .inputsearch input{
+        background-color: var( --botones)!important;
+        border-radius: 20px;
+        border: none;
+        padding: 13px 10px;
+        width: 60%;
+        color: var(--bgv-color)!important;
+    }
+    .card-destinos{
+        background-color: var(--bgv-color);
+        width: 18rem;
+        min-height: 10rem;
+        border-radius: 10px;
+        box-shadow: 1px 1px 4px 1px #1a1e2557;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.25s;
+        text-align: left;
+        margin-top: 10px;
+    
+    }
+    .card-destinos h2{
+        font-size: 15px;
+        
+    }
+    .destino-details-contain{
+        display: none;
+    }
+    .filtros{
+        display: flex;
+       flex-direction: column;
+    }
+}
+
 @media (max-width: 500px){
- 
+   
     .country-continent{
         width: 100%;
         display: flex;
@@ -323,10 +459,23 @@ option{
    
 }
 
-.scrolll::-webkit-scrollbar{
+.destino-details::-webkit-scrollbar{
     width: 7px;
     height: 7px;
    
+    cursor: pointer;
+ }
+ 
+ .destino-details::-webkit-scrollbar-thumb{
+     background-color: var(--botones);
+     width: 10px;
+     border-radius:20px ;
+     cursor: pointer;
+ }
+
+ .scrolll::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
     cursor: pointer;
  }
  
@@ -336,17 +485,16 @@ option{
      border-radius:20px ;
      cursor: pointer;
  }
-
  
 
-html::-webkit-scrollbar{
+select::-webkit-scrollbar{
     width: 7px;
     height: 7px;
     cursor: pointer;
  }
  
-html::-webkit-scrollbar-thumb{
-     background-color: var(--botones);
+ select::-webkit-scrollbar-thumb{
+     background-color: var(--celeste);
      width: 10px;
      border-radius:20px ;
      cursor: pointer;

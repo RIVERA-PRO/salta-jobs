@@ -12,11 +12,8 @@
 .sellerFormulario{
     display: flex;
     flex-direction: column;
-    width: 70%;
-  
-    background-color: var(--transparent);
-    padding: 20px;
     border-radius: 10px;
+    width: 30%;
 }
 
 .inputs{
@@ -36,11 +33,11 @@
 
 }
 .formSeller button{
-   margin-left: 40%;
-    width: 20rem;
-    padding: 8px;
+
+    width: 100%;
+    padding: 10px 0px;
     background-color: var(--botones) !important;
-    color: var(--texto-negro-blanco) !important;
+    color: var(--blanco) !important;
     border-radius: 20px;
     border: none;
     margin-top: 20px;
@@ -58,9 +55,7 @@
     .formSeller{
         padding: 16% 0px;
     }
-    .formSeller button{
-        margin-left: 28%;
-     }
+
      
     
 }
@@ -81,7 +76,5 @@
     .formSeller{
         padding: 25% 0px;
     }
-    .formSeller button{
-        margin-left: 10%;
-     }
+
 }

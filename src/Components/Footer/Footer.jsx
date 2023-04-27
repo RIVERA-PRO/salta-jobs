@@ -29,18 +29,18 @@ export default function FooterC() {
                     <Anchor to={`/`} >Docs</Anchor>
                 </div>
                 <div className='Footer-links'>
-                    <h4>Front-end</h4>
-                    <Anchor to={`/`} >JavaScript</Anchor>
-                    <Anchor to={`/`} >React</Anchor>
-                    <Anchor to={`/`} >Html5</Anchor>
-                    <Anchor to={`/`} >Sass</Anchor>
+                    <h4>Empleos</h4>
+                    <Anchor to={`/`} >Diseñador</Anchor>
+                    <Anchor to={`/`} >Desarrollador</Anchor>
+                    <Anchor to={`/`} >Ingeniero</Anchor>
+                    <Anchor to={`/`} >Gerente</Anchor>
                 </div>
                 <div className='Footer-links'>
-                    <h4>Back-end</h4>
-                    <Anchor to={`/`} >Node</Anchor>
-                    <Anchor to={`/`} >Express</Anchor>
-                    <Anchor to={`/`} >MongoDB</Anchor>
-                    <Anchor to={`/`} >JavaScript</Anchor>
+                    <h4>Categorias</h4>
+                    <Anchor to={`/`} >Tecnologia</Anchor>
+                    <Anchor to={`/`} >Educacion</Anchor>
+                    <Anchor to={`/`} >Administracion</Anchor>
+                    <Anchor to={`/`} >Ventas</Anchor>
                 </div>
 
             </div>

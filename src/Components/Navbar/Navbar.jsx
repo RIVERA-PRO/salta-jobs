@@ -98,16 +98,16 @@ export default function Navbar() {
                         {userData ? (
                             idUser?.is_admin ? (
                                 <div className='enlaces'>
-                                    <Anchor to={`/`} >Home</Anchor>
-                                    <Anchor to={`/destinos`} >Destinations</Anchor>
+                                    <Anchor to={`/`} >Inico</Anchor>
+                                    <Anchor to={`/publicar`} >Publicar</Anchor>
                                     <Anchor to={`/faqs`} >FAQ's</Anchor>
                                     <Anchor to={`/blog`} >Blog</Anchor>
                                     <Anchor to={`/new/destinos`} >Admin</Anchor>
                                 </div>
                             ) : (
                                 <div className='enlaces'>
-                                    <Anchor to={`/`} >Home</Anchor>
-                                    <Anchor to={`/destinos`} >Destinations</Anchor>
+                                    <Anchor to={`/`} >Inico</Anchor>
+                                    <Anchor to={`/publicar`} >Publicar</Anchor>
                                     <Anchor to={`/faqs`} >FAQ's</Anchor>
                                     <Anchor to={`/blog`} >Blog</Anchor>
                                 </div>

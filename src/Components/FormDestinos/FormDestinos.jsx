@@ -42,6 +42,8 @@ export default function FormDestinos() {
     const instagram = useRef()
     const facebook = useRef()
     const telefono = useRef()
+    const requisitos = useRef()
+
 
     function convertToNumber(value) {
         return parseFloat(value.trim().replace(',', ''));
@@ -52,6 +54,62 @@ export default function FormDestinos() {
     let mail = user?.mail
     let photo = user?.photo
     console.log(userId)
+    const jornadas = [
+        "Completa",
+        "Parcial",
+        "Intensiva",
+        "Flexible",
+    ];
+    const [selectJornada, selectJornada2] = useState('');
+    const jornadaRef = useRef(null);
+
+    const handleJornada = (e) => {
+        selectJornada2(e.target.value);
+    };
+
+    const modalidades = [
+        "Presencial",
+        "Hibrido",
+        "Remoto",
+    ];
+    const [selectModalidad, selectModalidad2] = useState('');
+    const modalidadRef = useRef(null);
+
+    const handleModalidad = (e) => {
+        selectModalidad2(e.target.value);
+    };
+    const SaltaDepartments = [
+        "Otros",
+        "Anta",
+        "Cachi",
+        "Cafayate",
+        "Salta",
+        "Cerrillos",
+        "Chicoana",
+        "General Güemes",
+        "Guachipas",
+        "Iruya",
+        "La Caldera",
+        "La Candelaria",
+        "La Poma",
+        "La Viña",
+        "Los Andes",
+        "Metán",
+        "Molinos",
+        "Orán",
+        "Rivadavia",
+        "Rosario de la Frontera",
+        "Rosario de Lerma",
+        "San Carlos",
+        "San Martín",
+        "Santa Victoria"
+    ];
+    const [selectedDepartment, setSelectedDepartment] = useState('');
+    const countryRef = useRef(null);
+
+    const handleSelect = (e) => {
+        setSelectedDepartment(e.target.value);
+    };
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -59,7 +117,7 @@ export default function FormDestinos() {
             "title": title.current.value,
             "description": description.current.value,
             "lugar": continent.current.value,
-            "ubicacion": country.current.value,
+            "ubicacion": countryRef.current.value,
             vacantes: convertToNumber(vacantes.current.value),
             salario: convertToNumber(salario.current.value),
             "cover_photo": cover_photo.current.value,
@@ -74,6 +132,9 @@ export default function FormDestinos() {
             "instagram": instagram.current.value,
             "facebook": facebook.current.value,
             "telefono": telefono.current.value,
+            "requisitos": requisitos.current.value,
+            "jornada": jornadaRef.current.value,
+            "modalidad": modalidadRef.current.value,
 
         }
         console.log(data)
@@ -103,6 +164,7 @@ export default function FormDestinos() {
 
 
     }
+
     return (
         <div className='formSeller'>
             <form onSubmit={handleSubmit} className='sellerFormulario'>
@@ -115,6 +177,8 @@ export default function FormDestinos() {
                         <div className='inputs'>
                             <label >description</label>
                             <input type="text" placeholder='description' ref={description} />
+                            <label >requisitos</label>
+                            <input type="text" placeholder='requisitos' ref={requisitos} />
                         </div>
                         <div className='al-lado'>
 
@@ -123,22 +187,57 @@ export default function FormDestinos() {
                                 <input type="text" placeholder='continent' ref={continent} />
 
                             </div>
-                            <div >
-                                <label >country</label>
-                                <input type="text" placeholder='country' ref={country} />
+                            <div>
+                                <div>
+                                    <label htmlFor="country">Departamento</label>
+                                    <select id="country" value={selectedDepartment} onChange={handleSelect} ref={countryRef}>
+                                        <option value="">Departamento</option>
+                                        {SaltaDepartments.map((department) => (
+                                            <option key={department} value={department}>
+                                                {department}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="jornada">Jornada</label>
+                                    <select id="jornada" value={selectJornada} onChange={handleJornada} ref={jornadaRef}>
+                                        <option value="">Jornada</option>
+                                        {jornadas.map((jornad) => (
+                                            <option key={jornad} value={jornad}>
+                                                {jornad}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="modalidad">Modalidad</label>
+                                    <select id="modalidad" value={selectModalidad} onChange={handleModalidad} ref={modalidadRef}>
+                                        <option value="">Modalidad</option>
+                                        {modalidades.map((modalid) => (
+                                            <option key={modalid} value={modalid}>
+                                                {modalid}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
-                            <div >
-                                <label >salario</label>
-                                <input type="number" placeholder='country' ref={salario} />
+                            <div>
+
                             </div>
-                            <div >
-                                <label >vacantes</label>
-                                <input type="number" placeholder='country' ref={vacantes} />
-                            </div>
+
+                        </div>
+                        <div >
+                            <label >salario</label>
+                            <input type="number" placeholder='country' ref={salario} />
+                        </div>
+                        <div >
+                            <label >vacantes</label>
+                            <input type="number" placeholder='country' ref={vacantes} />
                         </div>
                         <div className='inputs'>
                             <label >cover_photo</label>
-                            <input className='photo' type="text" placeholder='photo url' ref={cover_photo} />
+                            <input type="text" placeholder='photo url' ref={cover_photo} />
                         </div>
 
                     </div>
@@ -147,10 +246,7 @@ export default function FormDestinos() {
 
                         <div className='inputs'>
                             <div className='al-lado'>
-                                {/* <div>
-                                    <label >seller_id</label>
-                                    <input type="text" placeholder='seller_id' ref={seller_id} />
-                                </div> */}
+
                                 <div>
                                     <label >Category</label>
                                     <select className='selectCategory' name='selectcategory' id='selectcategory' ref={category_id}>
@@ -161,8 +257,6 @@ export default function FormDestinos() {
                                     </select>
 
 
-                                    {/* <label >category_id</label>
-                                    <input type="text" placeholder='category_id' ref={category_id} /> */}
                                 </div>
                             </div>
                         </div>
@@ -184,7 +278,7 @@ export default function FormDestinos() {
                 </div>
 
 
-                <button>Send</button>
+                <button>Crear</button>
             </form>
         </div>
     )
