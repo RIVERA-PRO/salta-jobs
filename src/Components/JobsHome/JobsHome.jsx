@@ -93,7 +93,7 @@ export default function JobsHome() {
 
         return (
             <div className="contain-destinos">
-                <h3>Explore the destinations</h3>
+                <h3>Explora las oportunidades</h3>
 
                 <div className="filtros">
                     <div>
