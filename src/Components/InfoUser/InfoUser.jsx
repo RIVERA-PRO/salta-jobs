@@ -46,9 +46,14 @@ function ProfilePage({ handleLogout }) {
     <div className='userInfoContainer'>
       {userData ? (
         <div className='userInfo'>
-          <h1>Welcome, <span>{userData.name}</span>!</h1>
-          <img src={userData.photo} alt="User Avatar" />
-          <p>Email: {userData.mail}</p>
+          <h3>Tu perfil</h3>
+          <div className='info'>
+            <img src={userData.photo} alt="User Avatar" />
+            <div>
+              <h3>{userData.name}</h3>
+              <p>{userData.mail}</p>
+            </div>
+          </div>
           <Logout onClick={handleLogout} />
         </div>
       ) : (

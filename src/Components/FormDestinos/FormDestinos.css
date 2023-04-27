@@ -1,0 +1,86 @@
+.al-lado{
+    display: flex;
+    gap: 2rem;
+}
+.al-lado input{
+    width: 100%;
+}
+
+
+.label-center{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.formSeller label{
+    font-size: 14px;
+
+}
+
+.formSeller{
+    background: linear-gradient(0deg,var(--gradient2) 0%, var(--gradient1) 100%);
+}
+
+.packages-contain{
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 3vh));
+    gap: 3rem;
+    background-color: var(--gradient1);
+    align-items: center;
+    align-content: center;
+    place-content: center;
+    padding: 10px 0%;
+    border-radius: 7px;
+}
+
+.packages{
+    width: 100%;
+}
+
+.contain-destin{
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 3vh));
+    gap: 3rem;
+    background-color: var(--gradient1);
+    place-content: center;
+    padding: 50px 0%;
+    border-radius: 7px;
+}
+.photo{
+    width: 200%;
+}
+
+@media (max-width: 500px){
+    .contain-destin{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .packages-contain{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 3vh));
+        gap: 1rem;
+    }
+    .al-lado{
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+
+}
+.selectCategory{
+    margin-left: 0;
+    background-color: var(  --cards-color)!important;
+    color: var(--text-color)!important;;
+ }

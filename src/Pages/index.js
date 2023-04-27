@@ -1,5 +1,7 @@
 import IndexLayout from "../Layouts/IndexLayout";
 import MainLayout from "../Layouts/MainLayout";
+import PageDetail from "./PageDetail/PageDetail";
+import DestinosFormPage from "./DestinosFormPage/DestinosFormPage";
 import { createBrowserRouter } from "react-router-dom";
 export const router = createBrowserRouter([
     {
@@ -12,8 +14,12 @@ export const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
             {
-                path: "/destinos",
-
+                path: "/details/:id",
+                element: <PageDetail />
+            },
+            {
+                path: "/new/destinos",
+                element: <DestinosFormPage />,
             },
 
         ],

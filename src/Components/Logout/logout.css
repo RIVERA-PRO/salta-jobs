@@ -1,16 +1,23 @@
 .logoutBtn{
-    width: 100%;
+    width: 60%;
     padding: 8px;
-    background-color: var(--botones);
-    color: var(--texto-negro-blanco);
+    background-color: transparent;
+    color: var(--blanco);
     border-radius: 20px;
     border: none;
     font-size: 20px;
     font-weight: 500;
+   margin-top: 20rem;
+   display: flex;
+   gap: 1rem;
+   text-align: center;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
+
 }
 
 .logoutBtn:hover{
     cursor: pointer;
-    transform: scale(1.1);
     transition: all ease-in-out .5s;
 }

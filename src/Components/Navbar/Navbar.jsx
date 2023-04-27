@@ -3,15 +3,29 @@ import './Navbar.css'
 
 import { Link as Anchor, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHeart, faShoppingCart, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import LogIn from '../LogIn/LogIn';
 import Register from '../Register/Register';
 import UserInfo from '../InfoUser/InfoUser';
+import { useDispatch, useSelector } from 'react-redux';
+import actionUser from '../../Store/GetUser/Actions';
+
+const { oneUser } = actionUser;
 export default function Navbar() {
+    const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false);
     let [modalUser, setModalUser] = useState(false);
     let [modalUserOption, setModalUserOption] = useState('login');
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (user && user.user_id) {
+            dispatch(oneUser({ user_id: user.user_id }));
+        }
+    }, [dispatch]);
+
+    const idUser = useSelector((store) => store.getUser.user[0]);
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         return () => {
@@ -34,7 +48,17 @@ export default function Navbar() {
         setModalUserOption(modalUserOption === 'register' ? 'login' : 'register');
     }; //Funcion renderiza el modal 'register' o 'login'
 
+    const [userData, setUserData] = useState(null);
 
+    const updateUserData = () => {
+        const user = localStorage.getItem('user');
+        if (user) {
+            setUserData(JSON.parse(user));
+        }
+    };
+    useEffect(() => {
+        updateUserData();
+    }, []);
 
     return (
         <header>
@@ -58,30 +82,59 @@ export default function Navbar() {
 
 
                     <div>
-                        <div className='icons-nav2'>
 
-                            <FontAwesomeIcon icon={faUser} onClick={handleModalUser} />
-                        </div>
-                        <div className='enlaces'>
-                            <Anchor to={`/`} >Inicio</Anchor>
-                            <Anchor to={`/`} >Blog</Anchor>
-                            <Anchor to={`/`} >Tols</Anchor>
-                            <Anchor to={`/`} >Docs</Anchor>
-                        </div>
-                        <div className="redes-sociales">
-                            <Anchor to={`https://www.instagram.com/juan_rivera_de_ellas/`}><i className='fa fa-instagram'></i></Anchor>
-                            <Anchor to={`https://www.linkedin.com/in/juan-rivera-9ba866215/`}> <i className='fa fa-linkedin'></i></Anchor>
-                            <Anchor to={`https://github.com/RIVERA-PRO`}> <i className='fa fa-github'></i></Anchor>
-                        </div>
+                        {userData ? (
+                            <div className='userInfo-nav2' onClick={handleModalUser} >
+                                <img src={userData.photo} alt="User Avatar" />
+                                <p><FontAwesomeIcon icon={faSignOutAlt} /> </p>
+
+                            </div>
+                        ) : (
+                            <div className='userInfo-nav2-ini' onClick={handleModalUser} >
+
+                                <p>Ingresar <FontAwesomeIcon icon={faSignOutAlt} /></p>
+                            </div>
+                        )}
+                        {userData ? (
+                            idUser?.is_admin ? (
+                                <div className='enlaces'>
+                                    <Anchor to={`/`} >Home</Anchor>
+                                    <Anchor to={`/destinos`} >Destinations</Anchor>
+                                    <Anchor to={`/faqs`} >FAQ's</Anchor>
+                                    <Anchor to={`/blog`} >Blog</Anchor>
+                                    <Anchor to={`/new/destinos`} >Admin</Anchor>
+                                </div>
+                            ) : (
+                                <div className='enlaces'>
+                                    <Anchor to={`/`} >Home</Anchor>
+                                    <Anchor to={`/destinos`} >Destinations</Anchor>
+                                    <Anchor to={`/faqs`} >FAQ's</Anchor>
+                                    <Anchor to={`/blog`} >Blog</Anchor>
+                                </div>
+                            )) : (
+                            <div className='enlaces'>
+                                <Anchor to={`/`} >Home</Anchor>
+                                <Anchor to={`/faqs`} >FAQ's</Anchor>
+                                <Anchor to={`/blog`} >Blog</Anchor>
+                            </div>
+                        )}
+
+
 
                     </div>
 
                 </div>
-                <div className='icons-nav'>
 
-                    <FontAwesomeIcon icon={faUser} onClick={handleModalUser} />
-                </div>
-
+                {userData ? (
+                    <div className='userInfo-nav' onClick={handleModalUser} >
+                        <img src={userData.photo} alt="User Avatar" />
+                        <p><FontAwesomeIcon icon={faSignOutAlt} /></p>
+                    </div>
+                ) : (
+                    <div className='icons-nav' onClick={handleModalUser}>
+                        <p><FontAwesomeIcon icon={faUser} /> Ingresar </p>
+                    </div>
+                )}
 
                 <div className={`nav_toggle  ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
                     <span></span>
@@ -89,10 +142,7 @@ export default function Navbar() {
                     <span></span>
                 </div>
 
-                <div className="redes-sociales1">
-                    <Anchor to={`https://www.linkedin.com/in/juan-rivera-9ba866215/`}> <i className='fa fa-linkedin'></i></Anchor>
-                    <Anchor to={`https://github.com/RIVERA-PRO`}> <i className='fa fa-github'></i></Anchor>
-                </div>
+
 
 
                 {modalUser && (

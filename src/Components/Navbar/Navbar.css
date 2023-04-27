@@ -12,7 +12,37 @@ nav{
     padding: 0px 6%;
     height: 10vh;
     box-shadow: 0px 4px 15px rgb(0 0 0 / 8%);
+    background-color: var(--bg-color);
+}
+.userInfo-nav{
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    width: 10rem;  
+}
+.userInfo-nav p{
+   color: var(--text-color);
+}
+.userInfo-nav img{
+    width: 45px;
+    background-color: transparent;
+    border-radius: 100%;
+}
+.userInfo-nav2{
+    display: none;
+    background-color: transparent;
+    gap: 4px;
+    cursor: pointer;
+    width: 10rem;
+    margin-top: -50px;
     
+}
+.userInfo-nav2 img{
+    width: 40px;
+    background-color: transparent;
+    border-radius: 100%;
 }
 .modal-nav{
     z-index: 30000;
@@ -28,7 +58,6 @@ nav{
     height: 100vh;
     gap: 2rem;
     align-items: center;
-    border-left: 1px solid var(--header);
     background-color: var(--bg-color);
     background: linear-gradient(0deg,var( --celeste) 0%, var( --modal) 50%)!important;
     -webkit-transition: 1s ease all;
@@ -57,20 +86,33 @@ nav{
 
 .icons-nav{
     display: flex;
-    font-size: 20px;
+    width: 9rem;
     cursor: pointer;
-    gap: 3rem;
-    background-color: aliceblue;
-    padding: 8px 10px;
-    border-radius: 100%;
+    border-radius: 30px;
+    padding: 8px 20px;
+    text-align: center;
+    background-color: var(--botones);
+    color: var(--blanco);
+}
+.icons-nav:hover{
+    background-color: var(--blanco);
+    color: var(--botones);
+    border: 1px solid var(--botones);
+    transition: 0.30s ease all;
 }
 .icons-nav2{
     display: none;
-    font-size: 20px;
+    font-size: 17px;
     cursor: pointer;
-    background-color: aliceblue;
-    padding: 20px ;
+    background-color: rgba(240, 248, 255, 0.854);
+    padding: 7px 8px;
     border-radius: 100%;
+    text-align: center;
+}
+
+.userInfo-nav2-ini{
+    display: none;
+
 }
 
 .parrafo{
@@ -83,7 +125,7 @@ nav{
 }
 
 
-.nav_items.open{
+.nav_items.open {
     transform: translateX(0) !important;
   
 }
@@ -194,6 +236,32 @@ nav{
 
 @media (max-width: 1024px) {
     
+    .userInfo-nav2-ini{
+        display: flex;
+        align-self: center;
+        align-items: center;
+        background-color: var(--blanco);
+        color: var(--botones);
+        border: 1px solid var(--botones);
+         transition: 0.30s ease all;
+         width: 7rem;
+        cursor: pointer;
+        border-radius: 30px;
+         padding: 8px 20px;
+         font-size: 13px;
+         font-weight: 500;
+    }
+    .userInfo-nav{
+        display: none;
+      }
+      .userInfo-nav2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 13px;
+      }
+
     .modal_content{
         width: 100%;
         min-height: 100vh;
@@ -212,6 +280,8 @@ nav{
         align-items: center;
         align-content: center;
         justify-content: center;
+        place-content: center;
+       text-align: center;
     }
     .icons-nav{
         display: none;
@@ -241,6 +311,7 @@ nav{
         padding-top: 30px;
         align-items: center;
         align-content: center;
+        align-self: center;
     }
 
     
@@ -343,19 +414,17 @@ nav{
 
 }
 
-@media (max-width: 400px) {
-    .logo-nav img{
-        width: 150px;
-    }
-}
 
+.enlaces a{
+    color: var(--text-color)!important;
+}
 .scrolled{
-    background-color: var(--modal);
+    background-color: var(--scroll);
     transition: 1s ease all;
     height: 8vh;
 }
-.scrolled .enlaces{
-    color: #fff;
+.scrolled .enlaces a{
+    color: #fff!important;
 }
 .scrolled .logo{
     transition: 1s ease all;
@@ -367,4 +436,33 @@ nav{
 }
 .scrolled .nav_toggle span{
    background-color: #fff!important;
+}
+.scrolled .icons-nav:hover{
+    background: linear-gradient(90deg, var(--botones) 0%, var(--botones)  120%);
+    color: var(--blanco);
+    border: 1px solid var(--blanco);
+    transition: 0.30s ease all;
+
+}
+.scrolled .icons-nav{
+    border: 1px solid var(--blanco);
+    background: linear-gradient(90deg, var(--blanco) 0%, var(--blanco)  120%);
+    color: var(--modal);
+    padding: 5px 20px;
+}
+.scrolled .userInfo-nav img{
+    width: 40px;
+    transition: 1s ease all;
+}
+.scrolled .userInfo-nav p{
+   color: #fff;
+}
+@media (max-width: 400px) {
+    .logo-nav img{
+        width: 180px;
+    }
+    .enlaces a{
+        color: #fff!important;
+    }
+   
 }

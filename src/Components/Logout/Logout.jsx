@@ -3,6 +3,8 @@ import './logout.css'
 import { useNavigate } from 'react-router';
 import { useDispatch } from "react-redux";
 import alertActions from "../../Store/Alert/actions"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faHeart, faShoppingCart, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 const { open } = alertActions;
 
@@ -17,13 +19,13 @@ export default function LogoutButton() {
     setInterval(() => window.location.href = '/')
     let dataAlert = {
       icon: "success",
-      title: "Log Out Successful",
+      title: "Sesión cerrada con éxito",
       type: "toast"
     };
     dispatch(open(dataAlert));
   }
 
   return (
-    <button className='logoutBtn' onClick={handleLogout}>Logout</button>
+    <button className='logoutBtn' onClick={handleLogout}>  <FontAwesomeIcon icon={faSignOutAlt} />Salir</button>
   )
 }

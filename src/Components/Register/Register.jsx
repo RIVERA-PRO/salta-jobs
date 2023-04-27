@@ -43,7 +43,7 @@ export default function Register() {
       await axios.post(url, data)
       let dataAlert = {
         icon: "success",
-        title: "Register Successful, check your email to verify your account",
+        title: "Registro exitoso",
         type: "toast"
       };
       dispatch(open(dataAlert));
@@ -64,7 +64,7 @@ export default function Register() {
 
       let dataAlert = {
         icon: "error",
-        title: "Error, please register and verify your user",
+        title: errorMessage,
         text: errorMessage,
         type: "toast",
       };
@@ -72,7 +72,7 @@ export default function Register() {
     }
   }
   const clientID =
-    "498726808406-87jruire70f962v3khp1j50g8du2ml5t.apps.googleusercontent.com";
+    "901329466549-imbkgdg5udchc3i7a2so08b42avdnqb2.apps.googleusercontent.com";
 
   useEffect(() => {
     const start = () => {
@@ -99,7 +99,7 @@ export default function Register() {
       await axios.post(url, data);
       let dataAlert = {
         icon: "success",
-        title: "Register Successful, check your email to verify your account",
+        title: "Registro exitoso",
         type: "toast"
       };
       dispatch(open(dataAlert));
@@ -125,7 +125,7 @@ export default function Register() {
 
       let dataAlert = {
         icon: "error",
-        title: "Error, please register and verify your user",
+        title: errorMessage,
         text: errorMessage,
         type: "toast",
       };
@@ -140,7 +140,7 @@ export default function Register() {
 
   return (
     <div className='form-register-contain'>
-      <form action="" className='form-register'>
+      <form action="" className='form-register' onSubmit={handleSubmit} ref={dataForm}>
         <h4>Registrarse</h4>
         <label htmlFor="">Nombre</label>
         <input type="text" placeholder=' Nombre' name='name' id='name' />
@@ -168,4 +168,3 @@ export default function Register() {
   )
 }
 
-// onSubmit={handleSubmit} ref={dataForm}

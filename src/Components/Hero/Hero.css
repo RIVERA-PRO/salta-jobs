@@ -1,5 +1,4 @@
-.contain-hero{
-
+.contain-home{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,104 +10,23 @@
     background-size: cover;
     padding: 100px 0%;
     width: 100%;
-    height: 70vh;
-    }
+    height: 50vh;
+    border-radius: 7px;
+}
     
 
-.contain-home{
+.contain-hero{
+    background-color: var(--bgv-color);
     display: flex;
     text-align: center;
     align-items: center;
     align-content: center;
     justify-content: center;
     width: 100%;
+    padding:4% 7%;
 }
     
-    @media (max-width: 1024px){
-        .btn-about{
-            display: none;
-        }
-        .contain-home{
-            margin: auto;
-            width: 100%;
-           margin-top: 100px;
-            border-radius: 1em;
-            display: grid;
-            grid-auto-rows: max-content;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 6rem;
-            text-align: center;
-            align-items: center;
-            align-content: center;
-            justify-content: center;
-        }
-        .btns{
-            display: flex;
-            gap: 2rem;
-            padding-top: 20px;
-            text-align: center;
-            align-items: center;
-            width: 100%;
-        }
-    
-        .leng{
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            width: 100%;
-            padding: 0px 19%;
-        }
-        .btns{
-            display: flex;
-            gap: 2rem;
-            padding-top: 20px;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        
-        
-       
-    }
-    
-    @media (max-width: 500px){
-        .presentacion h1{
-            font-size: 30px;
-            width: 100%;
-            color:var(--blanco);
-            font-weight: 900;
-            padding: 10px 10%;
-            margin-top: 100px;
-        }
-        .mi-parrafo{
-            padding: 10px 10%;
-            font-size: 14px;
-            color: var(--second-color);
-            width: 100%;
-        }
-        .leng {
-    
-            font-size: 13px;
-        }
-        .lenguajes{
-            place-content: center;
-        }
-        .contain-home{
-            margin: auto;
-            width: 100%;
-           margin-top: 100px;
-            border-radius: 1em;
-            display: grid;
-            grid-auto-rows: max-content;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 6rem;
-            text-align: center;
-            align-items: center;
-            align-content: center;
-            justify-content: center;
-        }
-    }
+  
     
     html::-webkit-scrollbar{
         width: 7px;

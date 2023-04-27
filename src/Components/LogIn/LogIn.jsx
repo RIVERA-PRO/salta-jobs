@@ -45,13 +45,13 @@ export default function SignIn() {
           name: res.data.user.name,
           mail: res.data.user.mail,
           photo: res.data.user.photo,
-          user: res.data.user._id
+          user_id: res.data.user._id,
         })
       );
       setReload(true); // Actualizar el estado para recargar el componente
       let dataAlert = {
         icon: 'success',
-        title: 'Log In Successful',
+        title: "Inicio correctamente",
         type: 'toast',
       };
       dispatch(open(dataAlert));
@@ -76,7 +76,7 @@ export default function SignIn() {
 
       let dataAlert = {
         icon: "error",
-        title: "Error, please register and verify your user",
+        title: errorMessage,
         text: errorMessage,
         type: "toast",
       };
@@ -84,7 +84,7 @@ export default function SignIn() {
     }
   }
   const clientID =
-    "498726808406-87jruire70f962v3khp1j50g8du2ml5t.apps.googleusercontent.com";
+    "901329466549-imbkgdg5udchc3i7a2so08b42avdnqb2.apps.googleusercontent.com";
 
   useEffect(() => {
     const start = () => {
@@ -124,7 +124,7 @@ export default function SignIn() {
       setReload(true);
       let dataAlert = {
         icon: "success",
-        title: "Log In Successful",
+        title: "Inicio correctamente",
         type: "toast",
       };
       dispatch(open(dataAlert));
@@ -146,7 +146,7 @@ export default function SignIn() {
 
       let dataAlert = {
         icon: "error",
-        title: "Error, please register and verify your user",
+        title: errorMessage,
         text: errorMessage,
         type: "toast",
       };
@@ -165,7 +165,7 @@ export default function SignIn() {
 
   return (
     <div className='form-register-contain'>
-      <form action='' className='form-register' >
+      <form action='' className='form-register' onSubmit={handleSubmit} ref={dataForm}>
         <h4>Ingresar</h4>
         <label htmlFor=''>Email</label>
         <input type='email' placeholder='Email' name='mail' id='mail' />
@@ -188,4 +188,3 @@ export default function SignIn() {
   );
 }
 
-// onSubmit={handleSubmit} ref={dataForm}

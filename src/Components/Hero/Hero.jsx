@@ -8,6 +8,7 @@ export default function Hero() {
             <div className='contain-home'>
 
                 <h1 className='span'>Tus oportunidades laborales</h1>
+                {/* <img src="../../img/hero2.png" alt="" /> */}
 
 
             </div>

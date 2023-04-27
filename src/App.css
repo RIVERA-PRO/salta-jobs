@@ -6,6 +6,7 @@
 :root{
   --text-color: #000;
   --bg-color: #f3f9fb;
+  --bgv-color: #f3f9fb;
   --darkIcon-color: #000;
   --header: #fff;
   --morado: #d103ffd3;
@@ -13,10 +14,13 @@
   --botones: #0D3878;
   --letra-azul:#0D3878;
   --modal: #0D3878;
+  --blanco:#fff;
+  --scroll:#0D3878!important;
 }
 .theme-dark{
   --text-color: #ffff;
   --bg-color: #0f172a!important;
+  --bgv-color: #131e36!important;
   --darkIcon-color: #fff;
   --header: #0D3878;
   --morado: #d103ffd3;
@@ -24,6 +28,8 @@
   --botones: #0D3878;
   --letra-azul:#ffff;
   --modal: #0D3878;
+  --blanco:#fff;
+  --scroll:#0f172a!important;
 }
 .theme-dark .logo2{
   display: flex;
@@ -70,11 +76,11 @@ display: none;
  background-color: transparent!important;
  top: 0!important;
  z-index: 10!important;
- margin-top: 6.8vh;
+ margin-top: 6.4vh;
  width: 10px;
  height: 0vh;
  border-radius:100% ;
- left: 84%;
+ left: 78%;
 }
 
 @media (max-width: 1150px){
@@ -88,6 +94,7 @@ display: none;
 }
 
 @media (max-width: 1024px){
+  
   .main-content{
   
     width: 10px;
@@ -98,7 +105,7 @@ display: none;
   }
 @media (max-width: 500px){
   .main-content{
-    margin-top: 6.5vh;
+    margin-top: 5.6vh;
     width: 10px;
     height: 0vh;
     border-radius:100% ;
