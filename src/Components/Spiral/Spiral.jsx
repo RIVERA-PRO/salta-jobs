@@ -12,7 +12,7 @@ export default function Spiral() {
 
     return (
         <div className="spiral-container">
-            <p>Loading...</p> <BounceLoader color="#D1F366" size={30} css={override} className="custom-loader" />
+            <p>Cargando...</p> <BounceLoader color="#0D3878" size={30} css={override} className="custom-loader" />
         </div>
     );
 }

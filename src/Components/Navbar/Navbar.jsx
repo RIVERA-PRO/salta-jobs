@@ -9,7 +9,7 @@ import Register from '../Register/Register';
 import UserInfo from '../InfoUser/InfoUser';
 import { useDispatch, useSelector } from 'react-redux';
 import actionUser from '../../Store/GetUser/Actions';
-
+import InputSearchs from '../InputSerach/InputSearchs';
 const { oneUser } = actionUser;
 export default function Navbar() {
     const dispatch = useDispatch();
@@ -69,6 +69,9 @@ export default function Navbar() {
                 <div className='logo2'>
                     <img src="../../../img/logo1.png" alt="logo" />
                 </div>
+                <div className='logonav'>
+                    <img src="../../../img/logonav.png" alt="logo" />
+                </div>
 
                 <div className={`nav_items ${isOpen && "open"}`} >
 
@@ -95,36 +98,39 @@ export default function Navbar() {
                                 <p>Ingresar <FontAwesomeIcon icon={faSignOutAlt} /></p>
                             </div>
                         )}
-                        {userData ? (
-                            idUser?.is_admin ? (
-                                <div className='enlaces'>
-                                    <Anchor to={`/`} >Inico</Anchor>
-                                    <Anchor to={`/publicar`} >Publicar</Anchor>
-                                    <Anchor to={`/faqs`} >FAQ's</Anchor>
-                                    <Anchor to={`/blog`} >Blog</Anchor>
-                                    <Anchor to={`/new/destinos`} >Admin</Anchor>
-                                </div>
-                            ) : (
-                                <div className='enlaces'>
-                                    <Anchor to={`/`} >Inico</Anchor>
-                                    <Anchor to={`/publicar`} >Publicar</Anchor>
-                                    <Anchor to={`/faqs`} >FAQ's</Anchor>
-                                    <Anchor to={`/blog`} >Blog</Anchor>
-                                </div>
-                            )) : (
-                            <div className='enlaces'>
-                                <Anchor to={`/`} >Home</Anchor>
-                                <Anchor to={`/faqs`} >FAQ's</Anchor>
-                                <Anchor to={`/blog`} >Blog</Anchor>
+                        <div className='input-enlaces'>
+                            <div>
+                                {userData ? (
+                                    idUser?.is_admin ? (
+                                        <div className='enlaces'>
+                                            <Anchor to={`/`} >Inico</Anchor>
+                                            <Anchor to={`/publicar`} >Publicar</Anchor>
+                                            <Anchor to={`/new/destinos`} >Admin</Anchor>
+                                        </div>
+                                    ) : (
+                                        <div className='enlaces'>
+                                            <Anchor to={`/`} >Inico</Anchor>
+                                            <Anchor to={`/publicar`} >Publicar</Anchor>
+                                        </div>
+                                    )) : (
+                                    <div className='enlaces'>
+                                        <Anchor to={`/`} >Home</Anchor>
+                                    </div>
+                                )}
                             </div>
-                        )}
 
+                            <div className='inputSearch-nav'>
+                                <InputSearchs />
+                            </div>
+                        </div>
 
 
                     </div>
 
                 </div>
-
+                <div className='inputSearch-nav2'>
+                    <InputSearchs />
+                </div>
                 {userData ? (
                     <div className='userInfo-nav' onClick={handleModalUser} >
                         <img src={userData.photo} alt="User Avatar" />

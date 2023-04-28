@@ -6,7 +6,7 @@
 :root{
   --text-color: #000;
   --bg-color: #f3f9fb;
-  --bgv-color: #f3f9fb;
+  --bgv-color: #ffffff;
   --darkIcon-color: #000;
   --header: #fff;
   --morado: #d103ffd3;
@@ -45,7 +45,9 @@
   align-items: center;
 }
 
-
+h2,h3,h4,h5{
+  color: var(--text-color);
+}
 
 .darkmode{
 width: 20px;
@@ -113,3 +115,15 @@ display: none;
   }
   }
 
+  @media (max-width: 400px){
+    .main-content{
+      margin-top: 6vh;
+      width: 10px;
+      height: 0vh;
+      border-radius:100% ;
+      left: 65%;
+    }
+    .darkmode-icon {
+      font-size: 16px;
+    }
+  }

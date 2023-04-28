@@ -85,8 +85,8 @@ nav{
 
 
 .icons-nav{
-    display: flex;
-    width: 9rem;
+  
+    width: 10rem;
     cursor: pointer;
     border-radius: 30px;
     padding: 8px 20px;
@@ -96,9 +96,12 @@ nav{
 }
 .icons-nav:hover{
     background-color: var(--blanco);
-    color: var(--botones);
+    color: var(--modal)!important;
     border: 1px solid var(--botones);
     transition: 0.30s ease all;
+}
+.icons-nav p:hover{
+    color: var(--modal)!important;
 }
 .icons-nav2{
     display: none;
@@ -233,15 +236,39 @@ nav{
     color: var(--bgv-color);
     margin-left: 70%;
 }
-
+.input-enlaces{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    padding-top: 10px;
+    width: 100%;
+}
+.inputSearch-nav2{
+    display: none;
+}
 @media (max-width: 1024px) {
+
+    .inputSearch-nav2{
+        display: flex;
+    }
+    .input-enlaces{
+        display: flex;
+      flex-direction: column;
+        width: 100%;
+    }
+    .input-enlaces .inputSearch-nav{
+        display: none;
+     
+    }
     
     .userInfo-nav2-ini{
         display: flex;
         align-self: center;
         align-items: center;
         background-color: var(--blanco);
-        color: var(--botones);
+        color: var(--text-color)!important;
         border: 1px solid var(--botones);
          transition: 0.30s ease all;
          width: 7rem;
@@ -250,6 +277,9 @@ nav{
          padding: 8px 20px;
          font-size: 13px;
          font-weight: 500;
+    } 
+    .userInfo-nav2-ini p{
+        color: var(--modal)!important;
     }
     .userInfo-nav{
         display: none;
@@ -439,16 +469,25 @@ nav{
 }
 .scrolled .icons-nav:hover{
     background: linear-gradient(90deg, var(--botones) 0%, var(--botones)  120%);
-    color: var(--blanco);
     border: 1px solid var(--blanco);
     transition: 0.30s ease all;
+    color: var(--modal)!important;
+}
+.scrolled .icons-nav p:hover{
+
+    color: var(--text-color)!important;
 
 }
 .scrolled .icons-nav{
     border: 1px solid var(--blanco);
     background: linear-gradient(90deg, var(--blanco) 0%, var(--blanco)  120%);
-    color: var(--modal);
+    color: var(--modal)!important;
     padding: 5px 20px;
+}
+.scrolled .icons-nav p{
+   
+    color: var(--modal)!important;
+
 }
 .scrolled .userInfo-nav img{
     width: 40px;
@@ -457,6 +496,12 @@ nav{
 .scrolled .userInfo-nav p{
    color: #fff;
 }
+.scrolled .inputJobs{
+    background-color: var( --blanco)!important;
+    padding: 8px 10px;
+    margin-top: 4px;
+    color: var(--text-color)!important;
+  }
 @media (max-width: 400px) {
     .logo-nav img{
         width: 180px;
@@ -465,4 +510,28 @@ nav{
         color: #fff!important;
     }
    
+}
+
+
+.logonav img{
+   width: 40px;
+}
+.logonav{
+    display: none;
+}
+
+@media (max-width: 400px){
+    .logonav{
+        display: flex;
+    }
+    .logo{
+        display: none!important;
+    }
+    .logo2{
+        display: none!important;
+    }
+    .scrolled .inputJobs{
+        padding: 6px 10px;
+        margin-top: 9px;
+      }
 }
